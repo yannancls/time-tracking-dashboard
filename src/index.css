@@ -1,0 +1,288 @@
+/* Rubik */
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+:root {
+    /* Primary Colors */
+    --Blue: hsl(246, 80%, 60%);
+    --Light-red-work: hsl(15, 100%, 70%);
+    --Soft-blue-play: hsl(195, 74%, 62%);
+    --Light-red-study: hsl(348, 100%, 68%);
+    --Lime-green-exercise: hsl(145, 58%, 55%);
+    --Violet-social: hsl(264, 64%, 52%);
+    --Soft-orange-self-care: hsl(43, 84%, 65%);
+    /* Neutral Colors */
+    --Very-dark-blue: hsl(226, 43%, 10%);
+    --Dark-blue: hsl(235, 46%, 20%);
+    --Desaturated-blue: hsl(235, 45%, 61%);
+    --Pale-blue: hsl(236, 100%, 87%);
+    --Light-blue: hsl(235, 50%, 36%);
+    /* Font Settings */
+    --font-size-titles: 18px;
+    --font-family: "Rubik", sans-serif;
+    --font-weight-300: 300;
+    --font-weight-400: 400;
+    --font-weight-500: 500;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--Very-dark-blue);
+    font-family: var(--font-family);
+    padding: 30px;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.main-card-container {
+    background-color: var(--Dark-blue);
+    border-radius: 10px;
+    height: 360px;
+    width: 180px;
+}
+
+.main-upper {
+    background-color: var(--Blue);
+    width: 100%;
+    height: 70%;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.main-upper img {
+    width: 50px;
+    border: 2px solid white;
+    border-radius: 50%;
+}
+
+.main-upper p {
+    color: var(--Pale-blue);
+    font-size: 0.7rem;
+    margin-top: 30px;
+    font-weight: var(--font-weight-300);
+}
+
+.main-upper h2 {
+    color: white;
+    font-size: 1.9rem;
+    font-weight: var(--font-weight-300);
+}
+
+.main-lower {
+    background-color: var(--Dark-blue);
+    width: 100%;
+    height: 30%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    justify-content: space-between;
+}
+
+.main-lower button {
+    width: fit-content;
+    background-color: transparent;
+    border: none;
+    color: var(--Desaturated-blue);
+    font-size: 0.75rem;
+    font-family: var(--font-family);
+    font-weight: var(--font-weight-400);
+    transition: 0.3s ease-in-out;
+}
+
+.main-lower button:hover{
+    cursor: pointer;
+    color: white;
+}
+
+.main-lower button.active {
+    color: white;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 20px;
+}
+
+.sub-card-container {
+    border-radius: 10px;
+    height: 170px;
+    width: 180px;
+    background-repeat: no-repeat;
+    background-position: right 10px top -5px;
+    background-size: auto;
+}
+
+.sub-card-container:nth-child(1) {
+    background-image: url('./assets/images/icon-work.svg');
+    background-color: var(--Light-red-work);
+}
+
+.sub-card-container:nth-child(2) {
+    background-image: url('./assets/images/icon-play.svg');
+    background-color: var(--Soft-blue-play);
+}
+
+.sub-card-container:nth-child(3) {
+    background-image: url('./assets/images/icon-study.svg');
+    background-color: var(--Light-red-study);
+}
+
+.sub-card-container:nth-child(4) {
+    background-image: url('./assets/images/icon-exercise.svg');
+    background-color: var(--Lime-green-exercise);
+}
+
+.sub-card-container:nth-child(5) {
+    background-image: url('./assets/images/icon-social.svg');
+    background-color: var(--Violet-social);
+}
+
+.sub-card-container:nth-child(6) {
+    background-image: url('./assets/images/icon-self-care.svg');
+    background-color: var(--Soft-orange-self-care);
+}
+
+.sub-upper {
+    background-color: transparent;
+    width: 100%;
+    height: 20%;
+    border-radius: 10px;
+}
+
+.sub-lower {
+    background-color: var(--Dark-blue);
+    width: 100%;
+    height: 80%;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: 0.2s ease-in-out;
+}
+
+.sub-lower:hover {
+    background-color: var(--Light-blue);
+    cursor: pointer;
+}
+
+.sub-lower-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: white;
+    font-size: var(--font-size-titles);
+    font-weight: var(--font-weight-500);
+}
+
+.sub-lower-top img {
+    object-fit: contain;
+    width: 15px;
+}
+
+.sub-lower-top img:hover {
+    filter: brightness(1.5);
+    cursor: pointer;
+}
+
+.sub-lower-low {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+.sub-lower-low .present-hours {
+    color: white;
+    font-weight: var(--font-weight-300);
+    font-size: 2.5rem;
+}
+
+.sub-lower-low .last-week-hours {
+    color: var(--Pale-blue);
+    font-size: 0.7rem;
+}
+
+@media (max-width: 870px) {
+    .main-card-container {
+        width: 580px;
+        height: 170px;
+    }
+    .main-upper {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 20px;
+    }
+    .main-upper img {
+        width: 60px;
+        height: 60px;
+    }
+    .main-upper p {
+        margin-top: unset;
+    }
+    .main-lower {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+}
+
+@media (max-width: 700px) {
+    .main-card-container {
+        width: 380px;
+        height: 170px;
+    }
+    .cards-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, auto);
+    }
+}
+
+@media (max-width: 450px) {
+    .main-card-container {
+        width: 100%;
+        height: 170px;
+    }
+    .main-lower button {
+        font-size: 1rem;
+    }
+    .cards-grid {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(1, auto);
+        width: 100%;
+    }
+    .sub-card-container {
+        width: 100%;
+        height: 150px;
+    }
+    .sub-lower-low {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .sub-lower-low .present-hours {
+        font-size: 2rem;
+    }
+    .sub-lower-low .last-week-hours {
+        font-size: 1rem;
+    }
+}
